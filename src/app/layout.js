@@ -1,14 +1,28 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Raleway } from "next/font/google";
+import { Instrument_Serif } from "next/font/google";
+import { Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
+import Navbar from "./nav/Navbar";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const raleway = Raleway({
   subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-raleway",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
+  weight: ["400"],
+  display: "swap",
+  variable: "--font-instrument-serif",
+});
+
+const cormorantGaramond = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  display: "swap",
+  variable: "--font-cormorant-garamond",
 });
 
 export const metadata = {
@@ -20,8 +34,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${raleway.variable} ${instrumentSerif.variable} ${cormorantGaramond.variable} font-sans antialiased`}
       >
+        <Navbar />
         {children}
       </body>
     </html>
