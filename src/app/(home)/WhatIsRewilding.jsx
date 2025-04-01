@@ -74,6 +74,21 @@ export default function WhatIsRewilding() {
           What is ReWilding?
         </motion.h2>
 
+        {/* Introduction Text */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-white/90 text-lg text-center max-w-3xl mx-auto mb-20 leading-relaxed font-light"
+        >
+          My name is Hinrik and I'm the founder. We here at ReWilding Iceland
+          are a dedicated team that works for mother earth. Our aim is to help
+          people slow down and connect with nature. We work with a concept
+          called Rewilding, coming back to nature. We use ancient and new tools
+          to assist us on that journey. Here you will find tours, expeditions
+          and adventures that speak to your soul, join us!
+        </motion.p>
+
         {/* Sections Grid */}
         <motion.div
           variants={containerVariants}

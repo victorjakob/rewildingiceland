@@ -20,9 +20,8 @@ export default function Navbar() {
 
   const navItems = [
     { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "Services", href: "/services" },
-    { name: "Contact", href: "/contact" },
+    { name: "Expeditions", href: "/expeditions" },
+    { name: "Contact Us", href: "/contact" },
   ];
 
   return (
@@ -42,13 +41,13 @@ export default function Navbar() {
             whileTap={{ scale: 0.95 }}
             className="flex-shrink-0"
           >
-            <Link href="/" className="text-2xl font-semibold text-white">
-              LOGO
+            <Link href="/" className="text-2xl  text-white">
+              ReWilding Iceland
             </Link>
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex space-x-12">
             {navItems.map((item) => (
               <motion.div
                 key={item.name}
@@ -57,7 +56,7 @@ export default function Navbar() {
               >
                 <Link
                   href={item.href}
-                  className="text-white/90 hover:text-white text-sm uppercase tracking-wider"
+                  className="text-white/90 hover:text-white text-base uppercase tracking-widest font-light"
                 >
                   {item.name}
                 </Link>
