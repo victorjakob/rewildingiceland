@@ -55,7 +55,7 @@ export default function Nature() {
           opacity: { duration: 0.8 },
         }}
       >
-        <div className="relative w-[40vw] aspect-square">
+        <div className="relative w-[80vw] sm:w-[60vw] md:w-[40vw] aspect-square">
           <Image
             src="https://res.cloudinary.com/dy8q4hf0k/image/upload/v1743448065/sacredgeometry2_wsfo3u.png"
             alt="Sacred Geometry"
@@ -68,7 +68,7 @@ export default function Nature() {
 
       {/* Animated Text Container */}
       <motion.div
-        className="relative  h-full flex items-center justify-center"
+        className="relative h-full flex items-center justify-center"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -78,15 +78,16 @@ export default function Nature() {
           className="text-center font-instrument-serif"
         >
           <div className="overflow-hidden">
-            <motion.div className="flex justify-center gap-[0.2em]  flex-wrap px-4">
+            <motion.div className="flex justify-center flex-wrap px-4 gap-[0.15em] sm:gap-[0.2em]">
               {text.split("").map((char, index) => (
                 <motion.span
                   key={index}
                   variants={letterVariants}
-                  className="text-6xl md:text-8xl lg:text-9xl py-2 text-white  inline-block"
+                  className="text-4xl sm:text-5xl md:text-7xl lg:text-9xl 
+                           py-1 sm:py-2 text-white inline-block
+                           hover:text-emerald-400 transition-colors duration-300"
                   whileHover={{
-                    scale: 1.2,
-                    color: "#34d399",
+                    scale: 1.1,
                     transition: { duration: 0.2 },
                   }}
                 >

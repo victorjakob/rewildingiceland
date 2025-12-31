@@ -1,10 +1,11 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function TakeTheJourney() {
   return (
-    <div className="relative w-full py-32 overflow-hidden bg-gradient-to-b from-background/50 to-background">
+    <div className="relative w-full py-16 sm:py-24 md:py-32 overflow-hidden bg-gradient-to-b from-background/50 to-background">
       {/* Section Title */}
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
@@ -35,30 +36,30 @@ export default function TakeTheJourney() {
           sizes="(max-width: 1080px) 100vw, 1080px"
         />
 
-        {/* Gradient Overlays */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-90" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-transparent" />
+        {/* Gradient Overlays - Reversed direction */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/30 to-transparent opacity-90" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
 
-        {/* Content Container */}
-        <div className="absolute inset-0 flex flex-col items-center justify-end pb-20">
+        {/* Content Container - Changed justify-end to justify-start and adjusted padding */}
+        <div className="absolute inset-0 flex flex-col items-center justify-start pt-16 sm:pt-20 md:pt-24">
           {/* Text Content */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
-            className="text-center mb-8"
+            className="text-center mb-6 sm:mb-8"
           >
-            <p className="text-xl md:text-2xl text-white/90 font-light tracking-wide mb-4">
+            <p className="text-2xl sm:text-2xl md:text-2xl text-white/90 font-light tracking-wide mb-2 sm:mb-4 px-4">
               Your adventure awaits
             </p>
-            <p className="text-base text-white/70 max-w-md mx-auto px-4">
+            <p className="text-sm sm:text-base text-white/70 max-w-md mx-auto px-6">
               Experience the transformative power of nature
             </p>
           </motion.div>
 
-          {/* Button */}
-          <motion.button
+          {/* Link */}
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
@@ -69,20 +70,24 @@ export default function TakeTheJourney() {
               transition: { duration: 0.2 },
             }}
             whileTap={{ scale: 0.98 }}
-            className="group relative px-12 py-6 bg-emerald-500/90 hover:bg-emerald-500 
-                     text-xl text-white font-light tracking-widest uppercase
-                     rounded-full shadow-xl hover:shadow-2xl
-                     transition-all duration-300 ease-out
-                     border border-emerald-400/30"
           >
-            <span className="relative z-10">Book My Journey</span>
-            <motion.div
-              className="absolute inset-0 rounded-full bg-emerald-400/20"
-              initial={{ scale: 0 }}
-              whileHover={{ scale: 1 }}
-              transition={{ duration: 0.3 }}
-            />
-          </motion.button>
+            <Link
+              href="/expeditions"
+              className="group relative inline-block px-4 sm:px-6 py-2 sm:py-3 bg-emerald-500/90 hover:bg-emerald-500 
+                       text-base sm:text-lg md:text-xl text-white font-light tracking-wider sm:tracking-widest uppercase
+                       rounded-full shadow-xl hover:shadow-2xl
+                       transition-all duration-300 ease-out
+                       border border-emerald-400/30"
+            >
+              <span className="relative z-10">Book My Journey</span>
+              <motion.div
+                className="absolute inset-0 rounded-full bg-emerald-400/20"
+                initial={{ scale: 0 }}
+                whileHover={{ scale: 1 }}
+                transition={{ duration: 0.3 }}
+              />
+            </Link>
+          </motion.div>
         </div>
       </motion.div>
 

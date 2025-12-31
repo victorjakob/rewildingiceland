@@ -3,6 +3,7 @@ import { Instrument_Serif } from "next/font/google";
 import { Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import Navbar from "./nav/Navbar";
+import Footer from "./nav/Footer";
 
 const raleway = Raleway({
   subsets: ["latin"],
@@ -38,6 +39,7 @@ export default function RootLayout({ children }) {
       >
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

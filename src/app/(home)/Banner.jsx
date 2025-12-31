@@ -33,32 +33,34 @@ export default function Banner() {
   };
 
   return (
-    <div className="w-full z-0 bg-background py-20" ref={ref}>
+    <div className="w-full z-0 bg-background py-12 sm:py-16 md:py-20" ref={ref}>
       <div className="max-w-7xl mx-auto px-4">
         <motion.h2
           variants={container}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="text-6xl md:text-7xl text-white text-center leading-relaxed tracking-wide"
+          className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl 
+                     text-white text-center 
+                     leading-normal sm:leading-relaxed 
+                     tracking-wide"
         >
           <motion.span variants={item}>Adventure</motion.span>
-          <motion.span variants={item}>, </motion.span>
+          <motion.span variants={item}> • </motion.span>
           <motion.span variants={item} className="text-green-400">
             nature therapy
           </motion.span>
-          <motion.span variants={item}>, </motion.span>
+          <motion.span variants={item}> • </motion.span>
           <motion.span variants={item} className="text-emerald-400">
             herbal medicine
           </motion.span>
-          <motion.span variants={item}>, </motion.span>
+          <motion.span variants={item}> • </motion.span>
           <motion.span variants={item} className="text-teal-400">
             connection
           </motion.span>
-          <motion.span variants={item}>, </motion.span>
+          <motion.span variants={item}> • </motion.span>
           <motion.span variants={item} className="text-white/80">
             and more
           </motion.span>
-          <motion.span variants={item}>.</motion.span>
         </motion.h2>
       </div>
     </div>
